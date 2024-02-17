@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1>Transaction History</h1>
+
+    {% if history %}
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock_info in history %}
+                    <tr>
+                        <td>{{ stock_info['stockname'] }}</td>
+                        <td>{{ stock_info['share'] }}</td>
+                        <td>${{ stock_info['stockprice'] }}</td>
+                        <td>{{ stock_info['time'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No stocks in your portfolio.</p>
+    {% endif %}
+{% endblock %}

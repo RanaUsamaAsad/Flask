@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1>Stock Portfolio</h1>
+
+    {% if stock_values %}
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock_info in stock_values %}
+                    <tr>
+                        <td>{{ stock_info['name'] }}</td>
+                        <td>{{ stock_info['total_share'] }}</td>
+                        <td>${{ stock_info['price'] }}</td>
+                        <td>${{ stock_info['total'] }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td class="thead-dark">Cash</td>
+                    <td>${{cash}}</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td class="thead-dark">Total</td>
+                    <td>${{total_investment}}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p>No stocks in your portfolio.</p>
+    {% endif %}
+{% endblock %}

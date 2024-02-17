@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post"
+        <label for="stock"></label>
+        <select name="stock" id="stock">
+            <option value="">Symbol</option>
+            {% for company in company_list %}
+            <option value={{company}}>{{company}}</option>
+            {% endfor %}
+        </select>
+        <p></p>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="num_share" name="num_share" placeholder="Shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
