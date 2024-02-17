@@ -3,9 +3,9 @@
 Stock management website using:
 
 <ul>
-<li>flask</li>
-<li>sqlite3</li>
-<li>python</li>
+<li>Flask</li>
+<li>SQLite3</li>
+<li>Python</li>
 </ul>
 
 My project allows a user to:
