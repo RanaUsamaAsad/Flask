@@ -1,6 +1,6 @@
 # Flask
 
-An assignment in my cs50 course to create a stock exchange website using:
+Stock management website using:
 
 <ul>
 <li>flask</li>
